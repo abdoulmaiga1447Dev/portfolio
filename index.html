@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aboudramane Maiga — Développeur web</title>
+  <meta name="description" content="Portfolio d'Aboudramane Maiga, développeur web freelance à Abidjan, diplômé en Sciences Informatiques, orienté sécurité informatique.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    // Active les animations seulement si le visiteur ne les a pas réduites
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('js');
+    }
+  </script>
+</head>
+<body>
+
+  <div id="top"></div>
+  <header class="nav">
+    <div class="nav__inner wrap">
+      <!-- Logo : lettres dessinées à la main, dans l'esprit de la police « Nordic » -->
+      <a href="#top" class="logo">
+        <span class="sr-only">Aboudramane Maiga</span>
+        <!-- Croix d'Agadez (bijou touareg) -->
+        <svg class="logo__cross" viewBox="0 0 100 140" aria-hidden="true" focusable="false">
+          <defs>
+            <!-- dégradé « métal » ; le reflet clair traverse la croix à intervalles réguliers -->
+            <linearGradient id="agadez-metal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f7bb1d"/>
+              <stop offset="-0.3" stop-color="#f4a321"><animate class="cross__shine" attributeName="offset" values="-0.3;1;1" keyTimes="0;0.18;1" dur="7s" begin="2.4s" repeatCount="indefinite"/></stop>
+              <stop offset="-0.2" stop-color="#fff4dc"><animate class="cross__shine" attributeName="offset" values="-0.2;1.1;1.1" keyTimes="0;0.18;1" dur="7s" begin="2.4s" repeatCount="indefinite"/></stop>
+              <stop offset="-0.1" stop-color="#f4a321"><animate class="cross__shine" attributeName="offset" values="-0.1;1.2;1.2" keyTimes="0;0.18;1" dur="7s" begin="2.4s" repeatCount="indefinite"/></stop>
+              <stop offset="1" stop-color="#e5741f"/>
+            </linearGradient>
+          </defs>
+          <g fill="url(#agadez-metal)">
+            <path d="M35 3 H44 L50 17 L56 3 H65 L55 29 H45 Z"/>
+            <path fill-rule="evenodd" d="M62 38 A12 12 0 1 1 38 38 A12 12 0 1 1 62 38 Z M55.5 38 A5.5 5.5 0 1 0 44.5 38 A5.5 5.5 0 1 0 55.5 38 Z"/>
+            <path d="M40 33 L13 26 L10 44 L40 43 Z M60 33 L87 26 L90 44 L60 43 Z"/>
+            <path d="M50 46 L79 85 L50 123 L21 85 Z"/>
+            <path d="M13 77 L21 85 L13 93 L5 85 Z M87 77 L95 85 L87 93 L79 85 Z M50 122 L57 130 L50 139 L43 130 Z"/>
+          </g>
+          <!-- facettes des pointes -->
+          <path fill="#c9611a" d="M13 77 L21 85 L13 93 Z M87 77 L95 85 L87 93 Z M50 122 L57 130 L50 139 Z"/>
+          <!-- gravures -->
+          <g fill="none" stroke="#5a2a0c" stroke-width="1.8" stroke-linecap="round">
+            <path d="M50 57 L71 85 L50 113 L29 85 Z" stroke-dasharray="0.1 4.2"/>
+            <path d="M50 74 V96 M39 85 H61"/>
+            <path d="M17 29 L15 42 M83 29 L85 42"/>
+            <path d="M40 8 L47 25 M60 8 L53 25" stroke-dasharray="0.1 3.6"/>
+          </g>
+          <g fill="#5a2a0c">
+            <circle cx="50" cy="66" r="1.8"/><circle cx="50" cy="104" r="1.8"/>
+            <circle cx="35" cy="85" r="1.8"/><circle cx="65" cy="85" r="1.8"/>
+            <circle cx="25" cy="34" r="1.5"/><circle cx="75" cy="34" r="1.5"/>
+          </g>
+        </svg>
+        <svg class="logo__mark" viewBox="-4 -4 1582 108" aria-hidden="true" focusable="false">
+            <path class="logo__first" style="--k:0" transform="translate(0 0)" d="M0 100 L36 0 L72 100 M17 52 L72 100" pathLength="1"/>
+            <path class="logo__first" style="--k:1" transform="translate(98 0)" d="M0 0 V100 M0 0 H34 A23 25 0 0 1 34 50 H0 M0 50 H38 A25 25 0 0 1 38 100 H0" pathLength="1"/>
+            <path class="logo__first" style="--k:2" transform="translate(186 0)" d="M50 0 A50 50 0 1 1 49.9 0 Z M14.6 85.4 L85.4 14.6" pathLength="1"/>
+            <path class="logo__first" style="--k:3" transform="translate(312 0)" d="M0 0 V64 A36 36 0 0 0 72 64 V0" pathLength="1"/>
+            <path class="logo__first" style="--k:4" transform="translate(410 0)" d="M0 0 V100 H40 A50 50 0 0 0 40 0 H0 M0 100 L75.4 14.6" pathLength="1"/>
+            <path class="logo__first" style="--k:5" transform="translate(526 0)" d="M0 100 V0 H36 A25 25 0 0 1 36 50 H0 M30 50 L64 100" pathLength="1"/>
+            <path class="logo__first" style="--k:6" transform="translate(616 0)" d="M0 100 L36 0 L72 100 M17 52 L72 100" pathLength="1"/>
+            <path class="logo__first" style="--k:7" transform="translate(714 0)" d="M0 100 V0 L42 70 L84 0 V100 M16 0 L42 44 L68 0" pathLength="1"/>
+            <path class="logo__first" style="--k:8" transform="translate(824 0)" d="M0 100 L36 0 L72 100 M17 52 L72 100" pathLength="1"/>
+            <path class="logo__first" style="--k:9" transform="translate(922 0)" d="M0 100 V0 L72 100 V0 M0 26 L53 100" pathLength="1"/>
+            <path class="logo__first" style="--k:10" transform="translate(1020 0)" d="M58 0 H0 V100 H58 M0 50 H42" pathLength="1"/>
+            <path class="logo__last" style="--k:11" transform="translate(1142 0)" d="M0 100 V0 L42 70 L84 0 V100 M16 0 L42 44 L68 0" pathLength="1"/>
+            <path class="logo__last" style="--k:12" transform="translate(1252 0)" d="M0 100 L36 0 L72 100 M17 52 L72 100" pathLength="1"/>
+            <path class="logo__last" style="--k:13" transform="translate(1350 0)" d="M0 0 V100" pathLength="1"/>
+            <path class="logo__last" style="--k:14" transform="translate(1376 0)" d="M88.3 17.9 A50 50 0 1 0 100 50 H52 M14.6 85.4 L52 50" pathLength="1"/>
+            <path class="logo__last" style="--k:15" transform="translate(1502 0)" d="M0 100 L36 0 L72 100 M17 52 L72 100" pathLength="1"/>
+          </svg>
+      </a>
+      <nav class="nav__links" id="menu" aria-label="Navigation principale">
+        <div class="nav__group">
+          <span class="nav__pill" aria-hidden="true"></span>
+          <a href="#profil">Profil</a>
+          <a href="#experiences">Expériences</a>
+          <a href="#projets">Projets</a>
+          <a href="#competences">Compétences</a>
+        </div>
+        <a href="#contact" class="nav__cta"><span class="cta-short">Contact</span><span class="cta-long">Discutons de votre projet <span aria-hidden="true">→</span></span></a>
+        <!-- liens secondaires, visibles seulement dans le menu mobile -->
+        <div class="nav__social">
+          <a href="mailto:abdoulmaiga1443@gmail.com">Email</a>
+          <a href="https://linkedin.com/in/aboudramanemaiga-9314422a0" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </nav>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+        <span class="burger__label">Menu</span>
+        <span class="burger__icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+    <span class="progress" aria-hidden="true"></span>
+  </header>
+
+  <main>
+    <!-- Introduction : bandeau coloré, formes géométriques en arrière-plan -->
+    <div class="hero-band">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="orb orb--violet"></span>
+        <span class="orb orb--red"></span>
+        <span class="orb orb--blue"></span>
+        <svg class="rings" viewBox="0 0 200 200"><circle cx="100" cy="100" r="12"/><circle cx="100" cy="100" r="21"/><circle cx="100" cy="100" r="30"/><circle cx="100" cy="100" r="39"/><circle cx="100" cy="100" r="48"/><circle cx="100" cy="100" r="57"/><circle cx="100" cy="100" r="66"/><circle cx="100" cy="100" r="75"/><circle cx="100" cy="100" r="84"/><circle cx="100" cy="100" r="93"/></svg>
+        <svg class="dots dots--row" viewBox="0 0 280 8"><circle cx="4" cy="4" r="3"/><circle cx="38" cy="4" r="3"/><circle cx="72" cy="4" r="3"/><circle cx="106" cy="4" r="3"/><circle cx="140" cy="4" r="3"/><circle cx="174" cy="4" r="3"/><circle cx="208" cy="4" r="3"/><circle cx="242" cy="4" r="3"/><circle cx="276" cy="4" r="3"/></svg>
+        <svg class="dots dots--grid" viewBox="0 0 76 280"><circle cx="4" cy="4" r="3"/><circle cx="38" cy="4" r="3"/><circle cx="72" cy="4" r="3"/><circle cx="4" cy="38" r="3"/><circle cx="38" cy="38" r="3"/><circle cx="72" cy="38" r="3"/><circle cx="4" cy="72" r="3"/><circle cx="38" cy="72" r="3"/><circle cx="72" cy="72" r="3"/><circle cx="4" cy="106" r="3"/><circle cx="38" cy="106" r="3"/><circle cx="72" cy="106" r="3"/><circle cx="4" cy="140" r="3"/><circle cx="38" cy="140" r="3"/><circle cx="72" cy="140" r="3"/><circle cx="4" cy="174" r="3"/><circle cx="38" cy="174" r="3"/><circle cx="72" cy="174" r="3"/><circle cx="4" cy="208" r="3"/><circle cx="38" cy="208" r="3"/><circle cx="72" cy="208" r="3"/><circle cx="4" cy="242" r="3"/><circle cx="38" cy="242" r="3"/><circle cx="72" cy="242" r="3"/><circle cx="4" cy="276" r="3"/><circle cx="38" cy="276" r="3"/><circle cx="72" cy="276" r="3"/></svg>
+        <span class="cross cross--a"></span>
+        <span class="cross cross--b"></span>
+        <span class="cross cross--c"></span>
+        <span class="bar bar--a"></span>
+        <span class="bar bar--b"></span>
+        <span class="bar bar--c"></span>
+        <span class="bar bar--d"></span>
+        <span class="bar bar--e"></span>
+      </div>
+
+    <section class="intro wrap">
+      <div class="intro__text">
+        <p class="kicker kicker--type">Aboudramane Maiga · Développeur web &amp; sécurité</p>
+        <div class="headline">
+          <div class="wyrm" aria-hidden="true">
+            <svg viewBox="-70 -100 1840 350" class="wyrm__svg" focusable="false">
+              <circle class="wyrm__puff" cx="-18" cy="138" r="6"/>
+              <circle class="wyrm__puff wyrm__puff--2" cx="-18" cy="138" r="6"/>
+              <g class="wyrm__float">
+              <g class="wyrm__neck">
+                <path class="wyrm__spikes" d="M154.9 152.1 L181.3 128.3 L182.6 155.8 Z M196.6 158.1 L223.5 135.0 L224.3 162.4 Z M238.2 164.1 L262.9 139.0 L266.1 166.0 Z M280.0 165.8 L300.1 136.9 L307.9 162.7 Z M321.7 159.6 L333.3 126.7 L347.6 149.3 Z M359.8 142.4 L363.2 107.4 L382.7 126.2 Z M393.5 117.3 L392.9 81.9 L414.6 98.6 Z M424.7 89.1 L423.1 53.6 L445.1 70.0 Z M455.5 60.3 L454.9 24.9 L476.7 41.8 Z M487.4 33.1 L489.9 -2.6 L510.1 16.5 Z M521.8 8.9 L528.9 -26.2 L546.4 -4.6 Z M559.1 -10.4 L570.8 -44.2 L585.2 -20.6 Z M598.6 -25.1 L613.3 -57.5 L625.4 -32.8 Z M639.2 -36.2 L656.1 -67.5 L666.6 -41.9 Z M680.3 -44.4 L699.0 -74.6 L708.2 -48.6 Z M721.9 -50.3 L742.2 -79.6 L749.8 -53.1 Z M763.9 -54.2 L785.4 -82.5 L791.8 -55.7 Z M805.4 -56.1 L828.3 -83.5 L833.5 -56.6 Z M847.6 -56.8 L870.1 -84.1 L875.9 -57.2 Z M889.9 -57.4 L912.2 -84.7 L918.2 -57.7 Z M931.7 -57.9 L955.0 -85.1 L960.3 -58.1 Z M973.7 -58.2 L997.0 -85.4 L1002.1 -58.5 Z M1016.2 -58.6 L1038.4 -85.7 L1044.1 -58.7 Z M1057.8 -58.8 L1080.6 -85.9 L1085.9 -59.0 Z M1100.1 -59.0 L1122.4 -86.1 L1128.1 -59.2 Z M1141.8 -59.2 L1164.5 -86.3 L1170.5 -59.3 Z M1184.6 -59.4 L1206.7 -86.5 L1212.0 -59.5 Z M1226.4 -59.5 L1248.8 -86.6 L1254.4 -59.6 Z M1268.0 -59.6 L1291.7 -86.7 L1296.5 -59.7 Z M1310.3 -59.7 L1333.1 -86.8 L1338.1 -59.8 Z M1352.1 -59.8 L1375.2 -86.8 L1380.3 -59.8 Z M1394.5 -59.8 L1417.7 -86.9 L1421.9 -59.9 Z M1436.2 -59.9 L1459.5 -86.9 L1464.9 -59.9 Z M1478.2 -59.9 L1501.7 -86.9 L1506.1 -59.9 Z M1520.5 -60.0 L1544.0 -87.0 L1548.5 -60.0 Z M1563.0 -60.0 L1585.5 -87.0 L1591.0 -60.0 Z M1604.5 -60.0 L1628.1 -87.0 L1632.5 -60.0 Z M1647.1 -60.0 L1669.6 -87.0 L1675.1 -60.0 Z M1688.6 -60.0 L1712.1 -87.0 L1716.5 -60.0 Z M1731.0 -60.0 L1753.4 -87.0 L1758.9 -60.0 Z"/>
+                <path class="wyrm__fill" d="M120 150 C190 150 250 178 320 160 C390 142 440 60 520 10 C580 -28 680 -52 800 -56 C1000 -60 1400 -60 1770 -60 L1770 10 C1400 10 1000 12 800 12 C710 12 630 22 570 62 C500 110 440 202 340 220 C250 236 150 214 84 186 Z"/>
+                <path class="wyrm__belly" d="M84.0 186.0 L90.4 188.7 L96.9 191.2 L103.5 193.7 L110.0 196.1 L116.8 198.4 L123.4 200.6 L129.9 202.6 L136.8 204.7 L143.5 206.6 L150.2 208.4 L157.1 210.2 L163.9 211.8 L170.8 213.4 L177.5 214.8 L184.5 216.2 L191.3 217.5 L198.2 218.7 L205.1 219.8 L212.1 220.9 L219.1 221.8 L225.9 222.6 L233.0 223.3 L239.9 223.9 L247.0 224.4 L253.9 224.8 L261.1 225.1 L268.0 225.3 L274.9 225.4 L282.1 225.4 L289.0 225.2 L295.9 224.9 L303.1 224.5 L310.0 223.9 L316.9 223.3 L324.0 222.4 L330.8 221.5 L337.8 220.4 L344.8 219.1 L351.5 217.6 L358.4 215.7 L364.9 213.8 L371.6 211.5 L378.2 209.1 L384.6 206.4 L391.2 203.4 L397.4 200.4 L403.5 197.1 L409.8 193.6 L415.7 190.1 L421.5 186.4 L427.5 182.4 L433.1 178.5 L439.0 174.2 L444.5 170.1 L450.1 165.7 L455.5 161.3 L460.8 156.9 L466.2 152.2 L471.4 147.7 L476.8 143.0 L481.9 138.4 L487.2 133.6 L492.2 128.9 L497.4 124.1 L502.6 119.3 L507.7 114.5 L512.9 109.7 L518.0 105.0 L523.1 100.3 L528.4 95.5 L533.5 91.0 L538.8 86.3 L544.1 81.8 L549.7 77.3 L555.0 73.0 L560.6 68.7 L566.4 64.5 L572.2 60.6 L578.0 56.9 L584.2 53.3 L590.3 50.0 L596.5 46.8 L602.9 43.8 L609.3 41.0 L615.9 38.3 L622.4 35.9 L628.9 33.6 L635.8 31.4 L642.3 29.5 L649.2 27.6 L655.9 25.9 L662.7 24.3 L669.6 22.8 L676.5 21.5 L683.4 20.3 L690.2 19.1 L697.2 18.1 L704.2 17.2 L711.3 16.3 L718.2 15.6 L725.2 14.9 L732.3 14.4 L739.1 13.9 L746.3 13.4 L753.2 13.1 L760.2 12.7 L767.3 12.5 L774.1 12.3 L781.3 12.2 L788.2 12.1 L795.1 12.0 L801.8 12.0 L809.1 12.0 L816.0 12.0 L823.0 12.0 L830.2 12.0 L836.8 12.0 L844.2 12.0 L851.0 12.0 L858.0 12.0 L865.1 11.9 L872.2 11.9 L878.8 11.9 L886.1 11.9 L892.9 11.9 L900.4 11.9 L907.3 11.9 L914.3 11.9 L921.4 11.8 L928.5 11.8 L934.9 11.8 L942.2 11.8 L949.5 11.8 L956.1 11.8 L963.6 11.7 L970.3 11.7 L977.1 11.7 L983.9 11.7 L991.7 11.7 L998.6 11.6 L1005.6 11.6 L1012.6 11.6 L1018.9 11.6 L1026.0 11.6 L1033.2 11.6 L1040.4 11.5 L1047.7 11.5 L1054.2 11.5 L1061.5 11.5 L1068.0 11.5 L1075.5 11.4 L1082.1 11.4 L1089.6 11.4 L1096.3 11.4 L1103.0 11.4 L1110.7 11.3 L1117.4 11.3 L1124.2 11.3 L1131.0 11.3 L1138.8 11.2 L1145.7 11.2 L1152.6 11.2 L1159.6 11.2 L1166.5 11.2 L1173.5 11.1 L1180.6 11.1 L1187.6 11.1 L1194.7 11.1 L1201.8 11.1 L1209.0 11.0 L1215.1 11.0 L1222.3 11.0 L1229.5 11.0 L1236.7 11.0 L1244.0 10.9 L1250.2 10.9 L1257.5 10.9 L1264.8 10.9 L1271.1 10.9 L1278.5 10.8 L1285.9 10.8 L1292.2 10.8 L1299.6 10.8 L1307.1 10.8 L1313.5 10.7 L1321.0 10.7 L1327.4 10.7 L1334.9 10.7 L1341.4 10.7 L1348.9 10.6 L1355.4 10.6 L1363.0 10.6 L1369.5 10.6 L1377.1 10.6 L1383.6 10.6 L1391.2 10.5 L1397.8 10.5 L1404.4 10.5 L1412.0 10.5 L1418.6 10.5 L1426.3 10.5 L1432.9 10.4 L1439.5 10.4 L1447.2 10.4 L1453.9 10.4 L1460.5 10.4 L1468.3 10.4 L1474.9 10.3 L1481.6 10.3 L1489.4 10.3 L1496.0 10.3 L1502.7 10.3 L1510.5 10.3 L1517.2 10.3 L1523.9 10.2 L1530.6 10.2 L1538.4 10.2 L1545.1 10.2 L1551.8 10.2 L1558.5 10.2 L1566.4 10.2 L1573.1 10.2 L1579.8 10.2 L1587.7 10.1 L1594.4 10.1 L1601.1 10.1 L1607.9 10.1 L1615.7 10.1 L1622.4 10.1 L1629.2 10.1 L1635.9 10.1 L1643.8 10.1 L1650.5 10.1 L1657.2 10.1 L1663.9 10.1 L1671.8 10.0 L1678.5 10.0 L1685.2 10.0 L1691.9 10.0 L1699.8 10.0 L1706.5 10.0 L1713.2 10.0 L1719.9 10.0 L1727.7 10.0 L1734.4 10.0 L1741.1 10.0 L1748.9 10.0 L1755.6 10.0 L1762.2 10.0 L1768.9 10.0 L1768.9 -10.0 L1762.2 -10.0 L1755.6 -10.0 L1748.9 -10.0 L1741.1 -10.0 L1734.4 -10.0 L1727.7 -10.0 L1719.9 -10.0 L1713.2 -10.0 L1706.5 -10.0 L1699.8 -10.0 L1691.9 -10.0 L1685.2 -10.0 L1678.5 -10.0 L1671.8 -10.0 L1663.9 -9.9 L1657.2 -9.9 L1650.5 -9.9 L1643.7 -9.9 L1635.9 -9.9 L1629.1 -9.9 L1622.4 -9.9 L1615.7 -9.9 L1607.8 -9.9 L1601.1 -9.9 L1594.4 -9.9 L1587.6 -9.9 L1579.8 -9.8 L1573.1 -9.8 L1566.4 -9.8 L1558.5 -9.8 L1551.8 -9.8 L1545.1 -9.8 L1538.4 -9.8 L1530.6 -9.8 L1523.9 -9.8 L1517.2 -9.7 L1510.5 -9.7 L1502.7 -9.7 L1496.0 -9.7 L1489.3 -9.7 L1481.5 -9.7 L1474.9 -9.7 L1468.2 -9.6 L1460.5 -9.6 L1453.8 -9.6 L1447.2 -9.6 L1439.5 -9.6 L1432.9 -9.6 L1426.3 -9.5 L1418.6 -9.5 L1412.0 -9.5 L1404.3 -9.5 L1397.7 -9.5 L1391.2 -9.5 L1383.6 -9.4 L1377.0 -9.4 L1369.4 -9.4 L1362.9 -9.4 L1355.3 -9.4 L1348.9 -9.4 L1341.3 -9.3 L1334.9 -9.3 L1327.3 -9.3 L1320.9 -9.3 L1313.4 -9.3 L1307.0 -9.2 L1299.6 -9.2 L1292.2 -9.2 L1285.8 -9.2 L1278.4 -9.2 L1271.1 -9.1 L1264.8 -9.1 L1257.5 -9.1 L1250.2 -9.1 L1243.9 -9.1 L1236.7 -9.0 L1229.4 -9.0 L1222.2 -9.0 L1215.0 -9.0 L1208.9 -9.0 L1201.8 -8.9 L1194.7 -8.9 L1187.6 -8.9 L1180.5 -8.9 L1173.5 -8.9 L1166.5 -8.8 L1159.5 -8.8 L1152.6 -8.8 L1145.7 -8.8 L1138.8 -8.8 L1130.9 -8.7 L1124.1 -8.7 L1117.3 -8.7 L1110.6 -8.7 L1102.9 -8.6 L1096.2 -8.6 L1089.6 -8.6 L1082.0 -8.6 L1075.5 -8.6 L1068.0 -8.5 L1061.5 -8.5 L1054.1 -8.5 L1047.7 -8.5 L1040.4 -8.5 L1033.1 -8.4 L1025.9 -8.4 L1018.8 -8.4 L1012.6 -8.4 L1005.5 -8.4 L998.5 -8.4 L991.6 -8.3 L983.9 -8.3 L977.0 -8.3 L970.3 -8.3 L963.5 -8.3 L956.1 -8.2 L949.5 -8.2 L942.1 -8.2 L934.8 -8.2 L928.4 -8.2 L921.3 -8.2 L914.3 -8.1 L907.3 -8.1 L900.4 -8.1 L892.8 -8.1 L886.1 -8.1 L878.7 -8.1 L872.2 -8.1 L865.0 -8.1 L858.0 -8.0 L851.0 -8.0 L844.2 -8.0 L836.8 -8.0 L830.1 -8.0 L823.0 -8.0 L816.0 -8.0 L809.1 -8.0 L801.8 -8.0 L795.1 -8.0 L788.0 -7.9 L780.9 -7.8 L773.6 -7.7 L766.6 -7.5 L759.4 -7.2 L752.2 -6.9 L745.1 -6.5 L737.8 -6.1 L730.7 -5.6 L723.5 -5.0 L716.2 -4.3 L709.1 -3.5 L701.7 -2.7 L694.4 -1.7 L687.2 -0.6 L680.0 0.5 L672.9 1.8 L665.6 3.2 L658.3 4.8 L651.2 6.5 L644.1 8.2 L636.8 10.2 L629.9 12.3 L622.6 14.7 L615.5 17.1 L608.6 19.7 L601.6 22.6 L594.6 25.6 L587.8 28.8 L581.0 32.3 L574.4 35.9 L567.7 39.8 L561.2 43.8 L554.9 48.1 L548.6 52.7 L542.7 57.2 L537.1 61.7 L531.3 66.5 L525.8 71.2 L520.3 76.0 L515.0 80.6 L509.6 85.5 L504.4 90.3 L499.3 95.0 L494.1 99.8 L488.9 104.6 L483.8 109.4 L478.6 114.2 L473.7 118.8 L468.5 123.6 L463.5 128.1 L458.2 132.7 L453.2 137.1 L447.9 141.6 L442.8 145.8 L437.7 150.0 L432.3 154.2 L427.0 158.2 L421.5 162.2 L416.2 165.9 L410.6 169.6 L405.2 173.0 L399.7 176.3 L393.9 179.6 L388.3 182.5 L382.7 185.3 L376.6 188.0 L370.8 190.5 L364.9 192.7 L358.9 194.7 L353.0 196.5 L346.8 198.1 L340.7 199.5 L334.4 200.7 L327.8 201.7 L321.4 202.6 L314.7 203.4 L308.2 204.0 L301.7 204.5 L294.9 204.9 L288.4 205.2 L281.8 205.7 L274.9 206.0 L268.3 206.2 L261.7 206.4 L254.8 206.4 L248.2 206.3 L241.3 206.1 L234.7 205.8 L227.8 205.4 L221.2 204.9 L214.4 204.3 L207.6 203.6 L200.9 202.8 L194.1 202.0 L187.5 201.0 L180.6 200.0 L174.0 198.8 L167.3 197.6 L160.6 196.3 L153.7 194.9 L147.2 193.4 L140.5 191.8 L133.7 190.1 L127.3 188.4 L120.7 186.5 L114.1 184.6 L107.6 182.5 L101.1 180.4 L94.7 178.2 L88.2 175.8 Z"/>
+                <path class="wyrm__ribs" d="M110.0 196.1 L114.1 184.6 M129.9 202.6 L133.7 190.1 M150.2 208.4 L153.7 194.9 M170.8 213.4 L174.0 198.8 M191.3 217.5 L194.1 202.0 M212.1 220.9 L214.4 204.3 M233.0 223.3 L234.7 205.8 M253.9 224.8 L254.8 206.4 M274.9 225.4 L274.9 206.0 M295.9 224.9 L294.9 204.9 M316.9 223.3 L314.7 203.4 M337.8 220.4 L334.4 200.7 M358.4 215.7 L353.0 196.5 M378.2 209.1 L370.8 190.5 M397.4 200.4 L388.3 182.5 M415.7 190.1 L405.2 173.0 M433.1 178.5 L421.5 162.2 M450.1 165.7 L437.7 150.0 M466.2 152.2 L453.2 137.1 M481.9 138.4 L468.5 123.6 M497.4 124.1 L483.8 109.4 M512.9 109.7 L499.3 95.0 M528.4 95.5 L515.0 80.6 M544.1 81.8 L531.3 66.5 M560.6 68.7 L548.6 52.7 M578.0 56.9 L567.7 39.8 M596.5 46.8 L587.8 28.8 M615.9 38.3 L608.6 19.7 M635.8 31.4 L629.9 12.3 M655.9 25.9 L651.2 6.5 M676.5 21.5 L672.9 1.8 M697.2 18.1 L694.4 -1.7 M718.2 15.6 L716.2 -4.3 M739.1 13.9 L737.8 -6.1 M760.2 12.7 L759.4 -7.2 M781.3 12.2 L780.9 -7.8 M801.8 12.0 L801.8 -8.0 M823.0 12.0 L823.0 -8.0 M844.2 12.0 L844.2 -8.0 M865.1 11.9 L865.0 -8.1 M886.1 11.9 L886.1 -8.1 M907.3 11.9 L907.3 -8.1 M928.5 11.8 L928.4 -8.2 M949.5 11.8 L949.5 -8.2 M970.3 11.7 L970.3 -8.3 M991.7 11.7 L991.6 -8.3 M1012.6 11.6 L1012.6 -8.4 M1033.2 11.6 L1033.1 -8.4 M1054.2 11.5 L1054.1 -8.5 M1075.5 11.4 L1075.5 -8.6 M1096.3 11.4 L1096.2 -8.6 M1117.4 11.3 L1117.3 -8.7 M1138.8 11.2 L1138.8 -8.8 M1159.6 11.2 L1159.5 -8.8 M1180.6 11.1 L1180.5 -8.9 M1201.8 11.1 L1201.8 -8.9 M1222.3 11.0 L1222.2 -9.0 M1244.0 10.9 L1243.9 -9.1 M1264.8 10.9 L1264.8 -9.1 M1285.9 10.8 L1285.8 -9.2 M1307.1 10.8 L1307.0 -9.2 M1327.4 10.7 L1327.3 -9.3 M1348.9 10.6 L1348.9 -9.4 M1369.5 10.6 L1369.4 -9.4 M1391.2 10.5 L1391.2 -9.5 M1412.0 10.5 L1412.0 -9.5 M1432.9 10.4 L1432.9 -9.6 M1453.9 10.4 L1453.8 -9.6 M1474.9 10.3 L1474.9 -9.7 M1496.0 10.3 L1496.0 -9.7 M1517.2 10.3 L1517.2 -9.7 M1538.4 10.2 L1538.4 -9.8 M1558.5 10.2 L1558.5 -9.8 M1579.8 10.2 L1579.8 -9.8 M1601.1 10.1 L1601.1 -9.9 M1622.4 10.1 L1622.4 -9.9 M1643.8 10.1 L1643.7 -9.9 M1663.9 10.1 L1663.9 -9.9 M1685.2 10.0 L1685.2 -10.0 M1706.5 10.0 L1706.5 -10.0 M1727.7 10.0 L1727.7 -10.0 M1748.9 10.0 L1748.9 -10.0 M1768.9 10.0 L1768.9 -10.0"/>
+                <path class="wyrm__scales" d="M175.0 175.2 L182.0 183.2 L189.0 175.2 M195.4 179.0 L202.4 187.0 L209.4 179.0 M215.7 182.1 L222.7 190.1 L229.7 182.1 M236.3 184.2 L243.3 192.2 L250.3 184.2 M256.8 185.0 L263.8 193.0 L270.8 185.0 M277.3 184.5 L284.3 192.5 L291.3 184.5 M297.8 182.3 L304.8 190.3 L311.8 182.3 M317.8 178.2 L324.8 186.2 L331.8 178.2 M337.2 172.2 L344.2 180.2 L351.2 172.2 M355.9 164.6 L362.9 172.6 L369.9 164.6 M373.8 155.4 L380.8 163.4 L387.8 155.4 M391.1 144.8 L398.1 152.8 L405.1 144.8 M407.9 133.1 L414.9 141.1 L421.9 133.1 M424.2 120.6 L431.2 128.6 L438.2 120.6 M440.3 107.5 L447.3 115.5 L454.3 107.5 M455.9 94.3 L462.9 102.3 L469.9 94.3 M471.6 80.9 L478.6 88.9 L485.6 80.9 M487.5 67.6 L494.5 75.6 L501.5 67.6 M503.6 54.7 L510.6 62.7 L517.6 54.7 M519.9 42.5 L526.9 50.5 L533.9 42.5 M536.8 30.9 L543.8 38.9 L550.8 30.9 M554.2 20.2 L561.2 28.2 L568.2 20.2 M572.1 10.4 L579.1 18.4 L586.1 10.4 M590.7 1.9 L597.7 9.9 L604.7 1.9 M610.1 -5.4 L617.1 2.6 L624.1 -5.4 M629.6 -11.6 L636.6 -3.6 L643.6 -11.6 M649.5 -16.7 L656.5 -8.7 L663.5 -16.7 M669.6 -20.9 L676.6 -12.9 L683.6 -20.9 M690.1 -24.4 L697.1 -16.4 L704.1 -24.4 M710.5 -27.1 L717.5 -19.1 L724.5 -27.1 M731.1 -29.1 L738.1 -21.1 L745.1 -29.1 M751.6 -30.6 L758.6 -22.6 L765.6 -30.6 M772.2 -31.6 L779.2 -23.6 L786.2 -31.6 M792.7 -32.1 L799.7 -24.1 L806.7 -32.1 M813.3 -32.3 L820.3 -24.3 L827.3 -32.3 M834.3 -32.4 L841.3 -24.4 L848.3 -32.4 M854.6 -32.6 L861.6 -24.6 L868.6 -32.6 M875.2 -32.7 L882.2 -24.7 L889.2 -32.7 M895.8 -32.9 L902.8 -24.9 L909.8 -32.9 M916.8 -33.0 L923.8 -25.0 L930.8 -33.0 M937.3 -33.1 L944.3 -25.1 L951.3 -33.1 M957.5 -33.2 L964.5 -25.2 L971.5 -33.2 M978.2 -33.3 L985.2 -25.3 L992.2 -33.3 M999.1 -33.4 L1006.1 -25.4 L1013.1 -33.4 M1019.5 -33.5 L1026.5 -25.5 L1033.5 -33.5 M1040.3 -33.6 L1047.3 -25.6 L1054.3 -33.6 M1060.6 -33.7 L1067.6 -25.7 L1074.6 -33.7 M1081.7 -33.8 L1088.7 -25.8 L1095.7 -33.8 M1102.2 -33.9 L1109.2 -25.9 L1116.2 -33.9 M1122.6 -34.0 L1129.6 -26.0 L1136.6 -34.0 M1143.7 -34.0 L1150.7 -26.0 L1157.7 -34.0 M1164.1 -34.1 L1171.1 -26.1 L1178.1 -34.1 M1184.7 -34.2 L1191.7 -26.2 L1198.7 -34.2 M1205.0 -34.2 L1212.0 -26.2 L1219.0 -34.2 M1225.6 -34.3 L1232.6 -26.3 L1239.6 -34.3 M1246.9 -34.3 L1253.9 -26.3 L1260.9 -34.3 M1267.3 -34.4 L1274.3 -26.4 L1281.3 -34.4 M1287.4 -34.4 L1294.4 -26.4 L1301.4 -34.4 M1308.6 -34.5 L1315.6 -26.5 L1322.6 -34.5 M1329.5 -34.5 L1336.5 -26.5 L1343.5 -34.5 M1350.0 -34.6 L1357.0 -26.6 L1364.0 -34.6 M1370.1 -34.6 L1377.1 -26.6 L1384.1 -34.6 M1390.8 -34.7 L1397.8 -26.7 L1404.8 -34.7 M1411.6 -34.7 L1418.6 -26.7 L1425.6 -34.7 M1432.0 -34.7 L1439.0 -26.7 L1446.0 -34.7 M1453.0 -34.8 L1460.0 -26.8 L1467.0 -34.8 M1473.5 -34.8 L1480.5 -26.8 L1487.5 -34.8 M1494.0 -34.8 L1501.0 -26.8 L1508.0 -34.8 M1515.2 -34.9 L1522.2 -26.9 L1529.2 -34.9 M1535.3 -34.9 L1542.3 -26.9 L1549.3 -34.9 M1556.0 -34.9 L1563.0 -26.9 L1570.0 -34.9 M1576.8 -34.9 L1583.8 -26.9 L1590.8 -34.9 M1597.5 -34.9 L1604.5 -26.9 L1611.5 -34.9 M1618.2 -34.9 L1625.2 -26.9 L1632.2 -34.9 M1638.4 -35.0 L1645.4 -27.0 L1652.4 -35.0 M1659.2 -35.0 L1666.2 -27.0 L1673.2 -35.0 M1679.9 -35.0 L1686.9 -27.0 L1693.9 -35.0 M1700.6 -35.0 L1707.6 -27.0 L1714.6 -35.0 M1721.3 -35.0 L1728.3 -27.0 L1735.3 -35.0 M1741.9 -35.0 L1748.9 -27.0 L1755.9 -35.0 M1761.9 -35.0 L1768.9 -27.0 L1775.9 -35.0"/>
+                <path class="wyrm__outline" d="M120 150 C190 150 250 178 320 160 C390 142 440 60 520 10 C580 -28 680 -52 800 -56 C1000 -60 1400 -60 1770 -60 L1770 10 C1400 10 1000 12 800 12 C710 12 630 22 570 62 C500 110 440 202 340 220 C250 236 150 214 84 186 Z"/>
+              </g>
+              <g class="wyrm__head"><g transform="translate(-30 30) scale(1.25)">
+                <path class="wyrm__body" d="M14 98 C18 88 30 82 44 80 C56 78 64 70 72 60 L92 50 C112 40 134 22 160 4 C150 30 136 46 118 56 C140 54 164 48 188 34 C174 58 154 72 132 76 C146 82 158 88 172 98 C158 100 146 100 136 98 C134 110 112 124 86 120 C74 126 60 128 46 124 L26 114 C44 112 64 108 82 102 C60 104 36 104 14 98 Z"/>
+                <path class="wyrm__fang" d="M30 100 L34 111 L39 102 Z M48 103 L52 112 L57 104 Z M62 111 L66 103 L70 109 Z"/>
+                <path class="wyrm__eye" d="M60 78 C68 70 78 66 90 66 C84 74 74 80 60 78 Z"/>
+                <ellipse class="wyrm__nostril" cx="26" cy="91" rx="3" ry="2"/>
+                <path class="wyrm__line" d="M82 102 C96 104 108 100 118 90 M118 56 C110 60 102 62 96 62 M132 76 C124 78 116 78 110 76 M112 44 C126 36 138 26 150 14 M140 58 C156 54 170 48 180 40"/>
+              </g></g>
+            </g>
+            </svg>
+          </div>
+          <h1 class="intro__title" data-split data-last-line>
+            Je développe des applications web robustes et <span class="last-line">sécurisées.</span>
+          </h1>
+          <!-- Message qui remplace le titre une fois ses lettres tombées -->
+          <div class="breach" aria-hidden="true">
+            <svg class="breach__shield" viewBox="0 0 160 200" focusable="false">
+              <g class="shield__drop"><g class="shield__sway">
+                <g class="shield__chains">
+            <g transform="translate(18.8 9.3) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(15.7 -7.4) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(12.5 -24.1) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(9.4 -40.8) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(6.2 -57.5) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(3.0 -74.2) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-0.1 -90.9) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-3.3 -107.6) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-6.5 -124.3) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-9.6 -141.0) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-12.8 -157.7) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-15.9 -174.4) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-19.1 -191.1) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-22.3 -207.8) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-25.4 -224.6) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-28.6 -241.3) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-31.8 -258.0) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-34.9 -274.7) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-38.1 -291.4) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-41.2 -308.1) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-44.4 -324.8) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-47.6 -341.5) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-50.7 -358.2) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-53.9 -374.9) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-57.0 -391.6) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-60.2 -408.3) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-63.4 -425.0) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(-66.5 -441.7) rotate(-190.7)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(-69.7 -458.4) rotate(-190.7)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(141.2 9.3) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(144.3 -7.4) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(147.5 -24.1) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(150.6 -40.8) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(153.8 -57.5) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(157.0 -74.2) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(160.1 -90.9) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(163.3 -107.6) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(166.5 -124.3) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(169.6 -141.0) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(172.8 -157.7) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(175.9 -174.4) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(179.1 -191.1) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(182.3 -207.8) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(185.4 -224.6) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(188.6 -241.3) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(191.8 -258.0) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(194.9 -274.7) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(198.1 -291.4) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(201.2 -308.1) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(204.4 -324.8) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(207.6 -341.5) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(210.7 -358.2) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(213.9 -374.9) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(217.0 -391.6) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(220.2 -408.3) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(223.4 -425.0) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+            <g transform="translate(226.5 -441.7) rotate(-169.3)"><rect class="link-side" x="-2.5" y="-12" width="5" height="24" rx="2.5"/></g>
+            <g transform="translate(229.7 -458.4) rotate(-169.3)"><rect class="link" x="-7" y="-13" width="14" height="26" rx="7"/><rect class="link-shine" x="-7" y="-13" width="14" height="26" rx="7"/></g>
+                </g>
+                <g class="shield__volts shield__volts--chains"><path class="volt-glow"/><path class="volt-core"/></g>
+                <g class="shield__body">
+                  <path class="shield__plate" d="M80 6 L148 26 V92 C148 140 118 170 80 192 C42 170 12 140 12 92 V26 Z"/>
+                  <path class="shield__rim" d="M80 19 L136 35 V92 C136 132 110 158 80 177 C50 158 24 132 24 92 V35 Z"/>
+                  <circle class="shield__key" cx="80" cy="86" r="14"/>
+                  <path class="shield__key" d="M73 94 H87 L92 128 H68 Z"/>
+                  <circle class="shield__rivet" cx="30" cy="42" r="3.2"/>
+                  <circle class="shield__rivet" cx="130" cy="42" r="3.2"/>
+                  <circle class="shield__rivet" cx="80" cy="168" r="3.2"/>
+                  <circle class="shield__ring" cx="22" cy="26" r="9"/>
+                  <circle class="shield__ring" cx="138" cy="26" r="9"/>
+                  <g class="shield__volts shield__volts--shield"><path class="volt-glow"/><path class="volt-core"/></g>
+                </g>
+              </g></g>
+            </svg>
+            <p class="breach__text">
+              <span class="breach__kicker"><span>Un code fragile, et tout s'effondre.</span></span>
+              <span class="breach__title"><span>Votre sécurité numérique</span></span>
+              <span class="breach__title"><span>commence par la nôtre.</span></span>
+            </p>
+          </div>
+        </div>
+        <p class="intro__lede" data-reveal style="--d: 700ms">
+          Développeur web freelance basé à Abidjan, diplômé en Sciences Informatiques.
+          Je construis des applications fiables, pensées pour résister aux menaces réelles.
+        </p>
+        <div class="intro__actions" data-reveal style="--d: 850ms">
+          <a href="#projets" class="btn btn--primary">Découvrir mes projets <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a href="#contact" class="btn btn--ghost">Discutons de votre projet <span class="btn__arrow" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="intro__meta" data-reveal style="--d: 1000ms">
+          <li>Abidjan</li>
+          <li>Freelance depuis 2025</li>
+          <li>FR / EN B2</li>
+        </ul>
+      </div>
+
+      <figure class="intro__photo" data-reveal style="--d: 300ms">
+        <!-- Comparateur : une barre verticale sépare les deux portraits ; on la fait glisser -->
+        <div class="zoom compare">
+          <img class="compare__img compare__img--1" src="assets/portrait-studio-1.jpg" alt="Portrait en noir et blanc d'Aboudramane Maiga" width="459" height="1024">
+          <img class="compare__img compare__img--2" src="assets/portrait-studio-2.jpg" alt="Second portrait en noir et blanc d'Aboudramane Maiga" width="687" height="1024">
+          <div class="compare__bar">
+            <span class="compare__knob" role="slider" tabindex="0" aria-label="Comparer les deux portraits" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6"/></svg>
+            </span>
+          </div>
+        </div>
+        <figcaption>
+          <span>Aboudramane Maiga — Abidjan, Côte d'Ivoire</span>
+          <span class="compare__tip" aria-hidden="true">↔ Glissez la barre</span>
+        </figcaption>
+      </figure>
+    </section>
+      <!-- Couche où tombent les lettres du titre -->
+      <div class="fall-stage" aria-hidden="true"></div>
+    </div>
+
+    <!-- Zone à fond commun : de Profil jusqu'à Compétences -->
+    <div class="dots-zone">
+      <!-- Motifs décoratifs du fond (derrière le contenu) -->
+      <div class="zone-deco" aria-hidden="true">
+        <svg class="deco deco--rings" viewBox="0 0 200 200"><circle cx="100" cy="100" r="18"/><circle cx="100" cy="100" r="32"/><circle cx="100" cy="100" r="46"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="88"/></svg>
+        <svg class="deco deco--dots deco--accent" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2.4"/><circle cx="30" cy="10" r="2.4"/><circle cx="50" cy="10" r="2.4"/><circle cx="70" cy="10" r="2.4"/><circle cx="90" cy="10" r="2.4"/><circle cx="10" cy="30" r="2.4"/><circle cx="30" cy="30" r="2.4"/><circle cx="50" cy="30" r="2.4"/><circle cx="70" cy="30" r="2.4"/><circle cx="90" cy="30" r="2.4"/><circle cx="10" cy="50" r="2.4"/><circle cx="30" cy="50" r="2.4"/><circle cx="50" cy="50" r="2.4"/><circle cx="70" cy="50" r="2.4"/><circle cx="90" cy="50" r="2.4"/><circle cx="10" cy="70" r="2.4"/><circle cx="30" cy="70" r="2.4"/><circle cx="50" cy="70" r="2.4"/><circle cx="70" cy="70" r="2.4"/><circle cx="90" cy="70" r="2.4"/><circle cx="10" cy="90" r="2.4"/><circle cx="30" cy="90" r="2.4"/><circle cx="50" cy="90" r="2.4"/><circle cx="70" cy="90" r="2.4"/><circle cx="90" cy="90" r="2.4"/></svg>
+        <span class="deco deco--plus deco--accent" style="--x: auto; --r: 4%; --t: 17%"></span>
+        <svg class="deco deco--cross" viewBox="0 0 100 140"><path d="M35 3 H44 L50 17 L56 3 H65 L55 29 H45 Z M62 38 A12 12 0 1 1 38 38 A12 12 0 1 1 62 38 Z M40 33 L13 26 L10 44 L40 43 Z M60 33 L87 26 L90 44 L60 43 Z M50 46 L79 85 L50 123 L21 85 Z M13 77 L21 85 L13 93 L5 85 Z M87 77 L95 85 L87 93 L79 85 Z M50 122 L57 130 L50 139 L43 130 Z"/></svg>
+        <span class="deco deco--diamonds deco--accent"><i></i><i></i><i></i></span>
+        <span class="deco deco--plus deco--accent" style="--x: 5%; --r: auto; --t: 46%"></span>
+        <svg class="deco deco--triangles" viewBox="0 0 160 120"><path d="M10 110 L50 30 L90 110 Z"/><path class="fill" d="M60 110 L95 40 L130 110 Z"/><path d="M100 110 L125 60 L150 110 Z"/></svg>
+        <svg class="deco deco--rings deco--rings-small" viewBox="0 0 200 200"><circle cx="100" cy="100" r="18"/><circle cx="100" cy="100" r="32"/><circle cx="100" cy="100" r="46"/><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="74"/><circle cx="100" cy="100" r="88"/></svg>
+        <svg class="deco deco--chevrons" viewBox="0 0 44 600"><polyline points="4,0 22,22 4,44 22,66 4,88 22,110 4,132 22,154 4,176 22,198 4,220 22,242 4,264 22,286 4,308 22,330 4,352 22,374 4,396 22,418 4,440 22,462 4,484 22,506 4,528 22,550 4,572 22,594"/><polyline points="22,0 40,22 22,44 40,66 22,88 40,110 22,132 40,154 22,176 40,198 22,220 40,242 22,264 40,286 22,308 40,330 22,352 40,374 22,396 40,418 22,440 40,462 22,484 40,506 22,528 40,550 22,572 40,594"/></svg>
+        <span class="deco deco--plus deco--accent" style="--x: auto; --r: 3%; --t: 83%"></span>
+        <svg class="deco deco--dots deco--dots-small deco--accent" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2.4"/><circle cx="30" cy="10" r="2.4"/><circle cx="50" cy="10" r="2.4"/><circle cx="70" cy="10" r="2.4"/><circle cx="10" cy="30" r="2.4"/><circle cx="30" cy="30" r="2.4"/><circle cx="50" cy="30" r="2.4"/><circle cx="70" cy="30" r="2.4"/><circle cx="10" cy="50" r="2.4"/><circle cx="30" cy="50" r="2.4"/><circle cx="50" cy="50" r="2.4"/><circle cx="70" cy="50" r="2.4"/><circle cx="10" cy="70" r="2.4"/><circle cx="30" cy="70" r="2.4"/><circle cx="50" cy="70" r="2.4"/><circle cx="70" cy="70" r="2.4"/></svg>
+        <span class="deco deco--plus deco--accent" style="--x: 4%; --r: auto; --t: 92%"></span>
+      </div>
+
+    <!-- Profil -->
+    <section class="profil-band" id="profil">
+      <div class="wrap profil2">
+        <figure class="profil2__art">
+          <span class="profil2__sun" aria-hidden="true"></span>
+          <div class="profil2__arch">
+            <img src="assets/portrait-illustration.jpg" alt="Illustration d'Aboudramane Maiga en tenue traditionnelle, souriant" width="600" height="750">
+          </div>
+          <span class="profil2__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        </figure>
+
+        <div class="profil2__content">
+          <p class="section-kicker"><span>01</span> Profil</p>
+          <h2 class="section-title">Une formation généraliste, <em>un profil polyvalent.</em></h2>
+          <p class="profil2__lead">
+            Ma Licence en Sciences Informatiques m'a donné des bases solides en développement web,
+            réseaux, systèmes et sécurité.
+          </p>
+          <p>
+            Freelance depuis 2025, je conçois, déploie et maintiens des <strong>applications web utilisées
+            en production</strong> par plusieurs entreprises. J'en assure la responsabilité complète, du
+            développement au support.
+          </p>
+          <p>
+            En parallèle, je me forme à la sécurité en autodidacte (programmation réseau en C, CTF, veille).
+            Mon objectif : un Master en Réseaux, Reverse Engineering et Analyse de Malware, puis devenir
+            <strong>auditeur en sécurité au sein d'une équipe red team</strong>.
+          </p>
+
+          <dl class="figures">
+            <div><dt>4</dt><dd>applications web livrées en production</dd></div>
+            <div><dt>2</dt><dd>entreprises clientes</dd></div>
+            <div><dt>~50</dt><dd>votants sur la plateforme de vote universitaire</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Expériences -->
+    <section class="exp-band" id="experiences">
+      <svg class="exp-band__motif" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+        <path d="M100 4 L196 100 L100 196 L4 100 Z M100 34 L166 100 L100 166 L34 100 Z M100 64 L136 100 L100 136 L64 100 Z"/>
+      </svg>
+      <div class="wrap exp">
+        <header class="exp__head">
+          <p class="section-kicker"><span>02</span> Expériences</p>
+          <h2 class="section-title">Ce que je livre <em>en production.</em></h2>
+          <p class="exp__intro">
+            Deux missions freelance, quatre applications en production : des outils métier conçus,
+            livrés et maintenus de bout en bout.
+          </p>
+        </header>
+
+        <ol class="timeline">
+          <li class="tl-item is-current">
+            <p class="tl-date"><span>Déc. 2025</span><span>Aujourd'hui</span></p>
+            <span class="tl-node" aria-hidden="true"></span>
+            <article class="tl-body">
+              <div class="tl-top">
+                <h3>KHIDMA</h3>
+                <span class="tl-live">En cours</span>
+              </div>
+              <p class="tl-role">Développeur freelance · Application de gestion interne</p>
+              <ul class="tl-list">
+                <li>Conception et développement d'une application web de gestion interne, utilisée par une dizaine de collaborateurs.</li>
+                <li>Maintenance continue : ajout de fonctionnalités, mises à jour et <strong>correction de failles de sécurité</strong>.</li>
+                <li>Responsabilité complète du produit, du développement au support en production.</li>
+              </ul>
+              <p class="tl-meta"><span><b>1</b> application</span><span><b>~10</b> utilisateurs</span></p>
+            </article>
+          </li>
+
+          <li class="tl-item">
+            <p class="tl-date"><span>Jan. 2026</span><span>Juin 2026</span></p>
+            <span class="tl-node" aria-hidden="true"></span>
+            <article class="tl-body">
+              <div class="tl-top">
+                <h3>SDW-CARGO</h3>
+              </div>
+              <p class="tl-role">Développeur freelance · Applications de gestion</p>
+              <ul class="tl-list">
+                <li>Développement de 3 applications web : gestion des stocks, des transitaires et suivi des colis.</li>
+                <li>Structuration de processus métiers complexes en outils numériques fiables.</li>
+                <li>Livraison en autonomie sur un périmètre fonctionnel large en 6 mois.</li>
+              </ul>
+              <p class="tl-meta"><span><b>3</b> applications</span><span><b>6</b> mois</span></p>
+            </article>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="sec wrap" id="projets">
+      <header class="sec__head">
+        <div>
+          <p class="section-kicker"><span>03</span> Projets</p>
+          <h2 class="section-title">De la sécurité <em>au web.</em></h2>
+        </div>
+        <p class="sec__intro">
+          Deux outils réseau développés en autoformation pour comprendre la sécurité de l'intérieur,
+          et une plateforme de vote en ligne pour l'élection du délégué de l'université.
+        </p>
+      </header>
+      <div class="projects">
+        <article class="project">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" class="viz-net">
+              <line class="viz-wire" x1="74" y1="50" x2="246" y2="50"/>
+              <line class="viz-wire viz-wire--back" x1="74" y1="70" x2="246" y2="70"/>
+              <rect class="viz-packet" x="60" y="46" width="12" height="8" rx="1"/>
+              <rect class="viz-packet viz-packet--2" x="60" y="46" width="12" height="8" rx="1"/>
+              <rect class="viz-packet viz-packet--back" x="248" y="66" width="12" height="8" rx="1"/>
+              <rect class="viz-packet viz-packet--back viz-packet--2" x="248" y="66" width="12" height="8" rx="1"/>
+              <g class="viz-node">
+                <rect x="28" y="38" width="46" height="34" rx="3"/>
+                <line x1="40" y1="80" x2="62" y2="80"/>
+                <line x1="51" y1="72" x2="51" y2="80"/>
+              </g>
+              <g class="viz-node viz-node--hub">
+                <rect x="138" y="42" width="44" height="36" rx="4"/>
+                <circle class="viz-led" cx="150" cy="60" r="2.5"/>
+                <circle class="viz-led viz-led--2" cx="160" cy="60" r="2.5"/>
+                <circle class="viz-led viz-led--3" cx="170" cy="60" r="2.5"/>
+              </g>
+              <g class="viz-node">
+                <rect x="246" y="38" width="46" height="34" rx="3"/>
+                <line x1="258" y1="80" x2="280" y2="80"/>
+                <line x1="269" y1="72" x2="269" y2="80"/>
+              </g>
+              <text class="viz-label" x="51" y="98">Poste A</text>
+              <text class="viz-label" x="160" y="98">Réseau local</text>
+              <text class="viz-label" x="269" y="98">Poste B</text>
+            </svg>
+          </div>
+          <p class="project__meta"><span>Autoformation</span><span>2026</span></p>
+          <h3>Outil d'interception réseau par ARP spoofing</h3>
+          <p>Outil développé en C pour comprendre et démontrer les vulnérabilités des réseaux locaux, en complément du cursus académique.</p>
+          <p class="stack">C · Réseaux locaux</p>
+        </article>
+
+        <article class="project">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" class="viz-scan">
+              <g class="viz-cell" style="--i: 0"><rect x="11" y="28" width="32" height="26" rx="2"/><text x="27" y="45">21</text></g>
+              <g class="viz-cell viz-cell--open" style="--i: 1"><rect x="49" y="28" width="32" height="26" rx="2"/><text x="65" y="45">22</text></g>
+              <g class="viz-cell" style="--i: 2"><rect x="87" y="28" width="32" height="26" rx="2"/><text x="103" y="45">23</text></g>
+              <g class="viz-cell" style="--i: 3"><rect x="125" y="28" width="32" height="26" rx="2"/><text x="141" y="45">25</text></g>
+              <g class="viz-cell" style="--i: 4"><rect x="163" y="28" width="32" height="26" rx="2"/><text x="179" y="45">53</text></g>
+              <g class="viz-cell viz-cell--open" style="--i: 5"><rect x="201" y="28" width="32" height="26" rx="2"/><text x="217" y="45">80</text></g>
+              <g class="viz-cell" style="--i: 6"><rect x="239" y="28" width="32" height="26" rx="2"/><text x="255" y="45">110</text></g>
+              <g class="viz-cell" style="--i: 7"><rect x="277" y="28" width="32" height="26" rx="2"/><text x="293" y="45">143</text></g>
+              <g class="viz-cell viz-cell--open" style="--i: 8"><rect x="11" y="66" width="32" height="26" rx="2"/><text x="27" y="83">443</text></g>
+              <g class="viz-cell" style="--i: 9"><rect x="49" y="66" width="32" height="26" rx="2"/><text x="65" y="83">445</text></g>
+              <g class="viz-cell" style="--i: 10"><rect x="87" y="66" width="32" height="26" rx="2"/><text x="103" y="83">993</text></g>
+              <g class="viz-cell" style="--i: 11"><rect x="125" y="66" width="32" height="26" rx="2"/><text x="141" y="83">3306</text></g>
+              <g class="viz-cell" style="--i: 12"><rect x="163" y="66" width="32" height="26" rx="2"/><text x="179" y="83">3389</text></g>
+              <g class="viz-cell" style="--i: 13"><rect x="201" y="66" width="32" height="26" rx="2"/><text x="217" y="83">5432</text></g>
+              <g class="viz-cell" style="--i: 14"><rect x="239" y="66" width="32" height="26" rx="2"/><text x="255" y="83">8080</text></g>
+              <g class="viz-cell" style="--i: 15"><rect x="277" y="66" width="32" height="26" rx="2"/><text x="293" y="83">8443</text></g>
+            </svg>
+          </div>
+          <p class="project__meta"><span>Autoformation</span><span>2026</span></p>
+          <h3>HalleySweep — Scanner de ports</h3>
+          <p>Outil qui identifie les ports ouverts et les services exposés sur une machine cible. Mise en pratique de la programmation réseau.</p>
+          <p class="stack">Sockets · TCP</p>
+        </article>
+
+        <article class="project">
+          <div class="viz" aria-hidden="true">
+            <svg viewBox="0 0 320 120" class="viz-vote">
+              <g class="viz-ballot">
+                <rect x="66" y="10" width="28" height="34" rx="2"/>
+                <path d="M73 27l5 5 9-10"/>
+              </g>
+              <g class="viz-urn">
+                <rect x="40" y="58" width="80" height="46" rx="3"/>
+                <rect x="34" y="48" width="92" height="12" rx="2"/>
+                <line x1="62" y1="54" x2="98" y2="54"/>
+              </g>
+              <g class="viz-result" style="--w: 1">
+                <text x="160" y="35">A</text>
+                <rect class="viz-track" x="176" y="26" width="120" height="10" rx="1"/>
+                <rect class="viz-bar" x="176" y="26" width="104" height="10" rx="1"/>
+              </g>
+              <g class="viz-result viz-result--2">
+                <text x="160" y="63">B</text>
+                <rect class="viz-track" x="176" y="54" width="120" height="10" rx="1"/>
+                <rect class="viz-bar" x="176" y="54" width="62" height="10" rx="1"/>
+              </g>
+              <g class="viz-result viz-result--3">
+                <text x="160" y="91">C</text>
+                <rect class="viz-track" x="176" y="82" width="120" height="10" rx="1"/>
+                <rect class="viz-bar" x="176" y="82" width="28" height="10" rx="1"/>
+              </g>
+            </svg>
+          </div>
+          <p class="project__meta"><span>University of Abidjan</span><span>2026</span></p>
+          <h3>Plateforme de vote électronique</h3>
+          <p>Application de vote en ligne pour l'élection du délégué (~50 étudiants) : authentification des votants, vote unique par étudiant, dépouillement automatique.</p>
+          <p class="stack">Web · Authentification</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="sec wrap" id="competences">
+      <header class="sec__head">
+        <div>
+          <p class="section-kicker"><span>04</span> Compétences</p>
+          <h2 class="section-title">Ma boîte <em>à outils.</em></h2>
+        </div>
+        <p class="sec__intro">
+          Les langages et les outils que j'utilise, du développement d'applications à l'analyse réseau
+          et à la sécurité.
+        </p>
+      </header>
+      <div class="skills-grid">
+          <article class="skill-group">
+            <h3>Langages</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/cplusplus.svg" alt="" width="32" height="32"></span>C / C++</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/python.svg" alt="" width="32" height="32"></span>Python</li>
+                  <li class="tool"><span class="tool__logo tool__logo--full"><img src="assets/logos/javascript.svg" alt="" width="32" height="32"></span>JavaScript</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/php.svg" alt="" width="32" height="32"></span>PHP</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/bash.svg" alt="" width="32" height="32"></span>Bash</li>
+                  <li class="tool"><span class="tool__logo tool__logo--mono" aria-hidden="true">ASM</span>Assembleur</li>
+                </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Sécurité</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/metasploit.svg" alt="" width="32" height="32"></span>Metasploit</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/burpsuite.svg" alt="" width="32" height="32"></span>Burp Suite</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/ghidra.png" alt="" width="32" height="32"></span>Ghidra</li>
+                  <li class="tool"><span class="tool__logo tool__logo--full"><img src="assets/logos/ida.png" alt="" width="32" height="32"></span>IDA</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/x64dbg.png" alt="" width="32" height="32"></span>x64dbg</li>
+                </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Réseaux</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/wireshark.svg" alt="" width="32" height="32"></span>Wireshark</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/nmap.png" alt="" width="32" height="32"></span>Nmap</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/cisco.svg" alt="" width="32" height="32"></span>Packet Tracer</li>
+                  <li class="tool"><span class="tool__logo tool__logo--full"><img src="assets/logos/shodan.png" alt="" width="32" height="32"></span>Shodan</li>
+                </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Développement</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/git.svg" alt="" width="32" height="32"></span>Git</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/github.svg" alt="" width="32" height="32"></span>GitHub</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/docker.svg" alt="" width="32" height="32"></span>Docker</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/linux.png" alt="" width="32" height="32"></span>Linux</li>
+                </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Bases de données</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/mysql.svg" alt="" width="32" height="32"></span>MySQL</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/postgresql.svg" alt="" width="32" height="32"></span>PostgreSQL</li>
+            </ul>
+          </article>
+          <article class="skill-group">
+            <h3>Cloud &amp; hébergement</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/aws.svg" alt="" width="32" height="32"></span>AWS</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/hostinger.svg" alt="" width="32" height="32"></span>Hostinger</li>
+                </ul>
+          </article>
+          <article class="skill-group">
+            <h3>IA</h3>
+            <ul class="tools">
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/gemini.svg" alt="" width="32" height="32"></span>Gemini</li>
+                  <li class="tool"><span class="tool__logo"><img src="assets/logos/claude.svg" alt="" width="32" height="32"></span>Claude</li>
+                  <li class="tool"><span class="tool__logo tool__logo--full"><img src="assets/logos/chatgpt.svg" alt="" width="32" height="32"></span>ChatGPT</li>
+            </ul>
+          </article>
+          <article class="skill-group skill-group--soft">
+            <h3>Transversal</h3>
+            <ul class="soft">
+              <li>Gestion de projets web en autonomie</li>
+              <li>Sécurité applicative</li>
+              <li>Analyse réseau</li>
+              <li>Travail en équipe</li>
+            </ul>
+          </article>
+      </div>
+    </section>
+
+    <!-- Formation -->
+    <section class="sec wrap" id="formation">
+      <header class="sec__head">
+        <div>
+          <p class="section-kicker"><span>05</span> Formation</p>
+          <h2 class="section-title">Parcours <em>&amp; certifications.</em></h2>
+        </div>
+        <p class="sec__intro">
+          Une formation scientifique, complétée par des certifications en réseau et un engagement
+          associatif à l'université.
+        </p>
+      </header>
+      <div class="edu2">
+        <div class="edu2__col">
+          <h3 class="edu2__label">Diplômes</h3>
+          <ol class="mini-tl">
+            <li>
+              <span class="mini-tl__date">2023 — 2026</span>
+              <strong>Licence en Sciences Informatiques</strong>
+              <span class="mini-tl__detail">University of Abidjan · Certificat de reconnaissance académique (2024)</span>
+            </li>
+            <li>
+              <span class="mini-tl__date">2023 — 2024</span>
+              <strong>Baccalauréat scientifique, série C</strong>
+              <span class="mini-tl__detail">Lycée Moderne BAD N'douci</span>
+            </li>
+          </ol>
+        </div>
+        <div class="edu2__col">
+          <h3 class="edu2__label">Certifications &amp; engagement</h3>
+          <ol class="mini-tl">
+            <li>
+              <span class="mini-tl__date">Février 2026</span>
+              <strong>Cisco Networking Academy</strong>
+              <span class="mini-tl__detail">Notions de base sur les réseaux</span>
+            </li>
+            <li>
+              <span class="mini-tl__date">En cours</span>
+              <strong>Certifications complémentaires</strong>
+              <span class="mini-tl__detail">En cours d'obtention</span>
+            </li>
+            <li>
+              <span class="mini-tl__date">2024 — 2025</span>
+              <strong>Chargé de communication</strong>
+              <span class="mini-tl__detail">Student Representative Government (SRG), University of Abidjan</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+    </div>
+
+    <!-- Contact -->
+    <!-- WhatsApp : +225 05 45 65 25 24 (format des liens wa.me : 2250545652524) -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <div class="contact__panel">
+          <svg class="contact__rings" viewBox="0 0 400 400" aria-hidden="true">
+            <circle cx="200" cy="200" r="60"/>
+            <circle cx="200" cy="200" r="105"/>
+            <circle cx="200" cy="200" r="150"/>
+            <circle cx="200" cy="200" r="195"/>
+          </svg>
+
+          <div class="contact__main">
+            <p class="kicker kicker--dark">Contact</p>
+            <h2 class="contact__title" data-split>Un projet, une mission ou une question&nbsp;?</h2>
+            <p class="contact__text">
+              Écrivez-moi sur WhatsApp, par email ou sur LinkedIn : je vous réponds dès que possible.
+            </p>
+            <div class="contact__actions">
+              <a class="btn btn--whatsapp" href="https://wa.me/2250545652524?text=Bonjour%20Aboudramane%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Discuter sur WhatsApp
+              </a>
+              <a class="btn btn--dark" href="mailto:abdoulmaiga1443@gmail.com">
+                Envoyer un email <span class="btn__arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+
+          <ul class="contact__cards">
+            <li>
+              <a class="contact__card" href="https://wa.me/2250545652524?text=Bonjour%20Aboudramane%2C%20j%27ai%20vu%20votre%20portfolio%20et%20je%20souhaite%20%C3%A9changer%20avec%20vous." target="_blank" rel="noopener">
+                <span class="contact__icon contact__icon--wa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></span>
+                <span class="contact__meta"><span class="contact__label">WhatsApp</span><span class="contact__value">Envoyer un message</span></span>
+                <span class="contact__go" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="contact__card" href="mailto:abdoulmaiga1443@gmail.com">
+                <span class="contact__icon contact__icon--mail"><svg class="stroke" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <span class="contact__meta"><span class="contact__label">Email</span><span class="contact__value">abdoulmaiga1443@gmail.com</span></span>
+                <span class="contact__go" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <a class="contact__card" href="https://linkedin.com/in/aboudramanemaiga-9314422a0" target="_blank" rel="noopener">
+                <span class="contact__icon contact__icon--in"><svg viewBox="0 0 128 128" aria-hidden="true"><path d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3zM39.17 107H21.06V48.73h18.11zm-9-66.21a10.5 10.5 0 1110.49-10.5 10.5 10.5 0 01-10.54 10.48zM107 107H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53V48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75z"/></svg></span>
+                <span class="contact__meta"><span class="contact__label">LinkedIn</span><span class="contact__value">aboudramanemaiga</span></span>
+                <span class="contact__go" aria-hidden="true">↗</span>
+              </a>
+            </li>
+            <li>
+              <div class="contact__card">
+                <span class="contact__icon contact__icon--pin"><svg class="stroke" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+                <span class="contact__meta"><span class="contact__label">Localisation</span><span class="contact__value">Abidjan, Côte d'Ivoire</span></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span>© <span id="year">2026</span> Aboudramane Maiga</span>
+      <a href="#top">Haut de page</a>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Retour en haut de page"><span aria-hidden="true">↑</span></a>
+
+  <script src="script.js"></script>
+</body>
+</html>
